@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yun.todo.mapper.TodoMapper">
+
+    <select id="list" resultType="Todos">
+        SELECT *
+        FROM todos
+    </select>
+
+    <select id="select" resultType="Todos">
+        SELECT *
+        FROM todos
+        WHERE no = #{no}
+    </select>
+
+    <select id="selectById" resultType="Todos">
+        SELECT *
+        FROM todos
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO todos (id, name, status, todo_date )
+        VALUES (#{id}, #{name}, #{status}, #{todoDate} )   
+    </insert>
+
+    <update id="updateById">
+        UPDATE todos
+        SET name = #{name},
+            status = #{status}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM todos
+        WHERE id = #{id}
+    </delete>
+
+    <select id="findByTodoDate" resultType="Todos">
+        SELECT *
+        FROM todos
+        WHERE DATE(todo_date) = #{date}
+    </select>
+
+</mapper>
