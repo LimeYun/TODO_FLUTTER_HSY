@@ -4,4 +4,5 @@
 
 ## 완성 화면
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/b371e9e7-d5c9-4a8e-94ba-27e4ccbb509f)
+
